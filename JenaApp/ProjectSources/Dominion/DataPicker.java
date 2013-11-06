@@ -70,6 +70,7 @@ public class DataPicker {
 		if(in==null)
 			throw new IllegalArgumentException("File not found"); 
 	 
+		m.read(in, null, format); 
 		setModel(m);
 		dqmodel.setDqmodel(m); 
 		dqmodel.setFormat(format); 

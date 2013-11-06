@@ -12,10 +12,13 @@
 <h1>Hello :D</h1>
 <p> The purpose of this app is to get habilities with Apache Jena Framework. </p>
 
+<p>Put directly the URI of the resource </p>
 <s:form action="getURI">
 	<s:textfield name="uri" label="Put here your URI"/>
 	<s:submit name="Send" value="Get URI"></s:submit>
 </s:form>
+
+<p>Upload a file from your computer </p>
 <s:form action="upload" method="post" enctype="multipart/form-data">
     <s:file name="upload" label="File to upload"/>
     <s:submit/>

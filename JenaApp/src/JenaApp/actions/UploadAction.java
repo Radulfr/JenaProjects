@@ -27,7 +27,16 @@ public class UploadAction extends ActionSupport {
 	private String filename;
 	private String format; 
 	private Model model; 
+	private String uri;
 	private LinkedList<Property> modelProperties; 
+
+	public String getUri() {
+		return uri;
+	}
+
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
 
 	public String getFormat() {
 		return format;
@@ -76,7 +85,7 @@ public class UploadAction extends ActionSupport {
 			Operation oper = new Operation(dq.getModel());
 			setModelProperties(oper.getAllProperties());
 			session.put("model", dq.getModel()); 
-
+			setUri("Local file"); 
 			in.close();
 
 		} catch (IOException e){
