@@ -63,5 +63,38 @@ public class DataPicker {
 		dqmodel.setFormat(getFormat()); 
 		return dqmodel; 
 	}
+	public DQModel getModel(InputStream in, String format){
+		Model m = ModelFactory.createDefaultModel();
+		DQModel dqmodel = new DQModel(); 
+
+		if(in==null)
+			throw new IllegalArgumentException("File not found"); 
+	 
+		setModel(m);
+		dqmodel.setDqmodel(m); 
+		dqmodel.setFormat(format); 
+		return dqmodel; 
+	}
+
+	@SuppressWarnings("unused")
+	public String checkFormat(String filename) {
+		String format = filename.substring(filename.length()-EXTENSION_LENGTH);
+		switch(format.toLowerCase()){
+		case ".n3" :
+			format = "N3";
+			break; 	
+		case "ttl":
+			format = "TTL";
+			break;
+/*		case "xml":
+			m.read(in, null, "");
+			break; */
+		case "rdf":
+			format = "RDF/XML";
+			break;
+		}
+		return format; 
+		
+	}
 
 }

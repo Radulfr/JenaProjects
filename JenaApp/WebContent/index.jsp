@@ -16,5 +16,9 @@
 	<s:textfield name="uri" label="Put here your URI"/>
 	<s:submit name="Send" value="Get URI"></s:submit>
 </s:form>
+<s:form action="upload" method="post" enctype="multipart/form-data">
+    <s:file name="upload" label="File to upload"/>
+    <s:submit/>
+</s:form>
 </body>
 </html>

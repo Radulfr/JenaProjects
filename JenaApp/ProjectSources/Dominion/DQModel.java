@@ -1,15 +1,27 @@
 package Dominion;
 
+import java.io.InputStream;
+
 import com.hp.hpl.jena.rdf.model.Model;
 
 public class DQModel {
 	private Model model; 
 	private String format;
 	
+	// Constructor for URLs
 	public DQModel(String userURI) {
 		DataPicker dp = new DataPicker();
 		DQModel aux; 
 		aux = dp.getModel(userURI);
+		this.model = aux.getModel();
+		this.format = aux.getFormat();
+	}
+	
+	// Constructor for file uploader
+	public DQModel(InputStream in, String format) {
+		DataPicker dp = new DataPicker();
+		DQModel aux; 
+		aux = dp.getModel(in, format);
 		this.model = aux.getModel();
 		this.format = aux.getFormat();
 	}

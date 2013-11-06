@@ -11,7 +11,6 @@
 <h3>Query results</h3>
 <br>
 
-Minimal changes
 <table border="1">
 		<s:iterator value="qs" status="itStatus">
 			<tr>
